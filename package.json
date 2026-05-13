@@ -1,0 +1,15 @@
+{
+  "name": "snake-venom-classifier",
+  "version": "1.0.0",
+  "description": "Root package for managing VenomGuard Pro services",
+  "scripts": {
+    "start:ai": "cd AI-Backend && .\\venv\\Scripts\\python.exe main.py",
+    "start:web": "cd web-backend && npm run dev",
+    "start:frontend": "cd frontend && npm run dev",
+    "start": "concurrently \"npm run start:ai\" \"npm run start:web\" \"npm run start:frontend\"",
+    "install:all": "npm install && cd web-backend && npm install && cd ../frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

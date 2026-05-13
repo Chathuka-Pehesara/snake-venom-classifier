@@ -1,17 +1,17 @@
-\"\"\"
+"""
 Model Export Utility for Snake Classification
 This script defines the architectures used in the project and provides 
 instructions for finalizing the production model.
-\"\"\"
+"""
 
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 
 def create_deep_cnn_model(input_shape=(224, 224, 3)):
-    \"\"\"
+    """
     Architecture of 'Deep_CNN_basic_fast' - The baseline custom vision model.
-    \"\"\"
+    """
     model = keras.Sequential([
         layers.Input(shape=input_shape),
         layers.Conv2D(32, (3, 3), activation='relu', padding='same'),
@@ -34,9 +34,9 @@ def create_deep_cnn_model(input_shape=(224, 224, 3)):
     return model
 
 def create_transfer_learning_model(input_shape=(224, 224, 3)):
-    \"\"\"
+    """
     Recommended Upgrade: MobileNetV2 Transfer Learning for >90% accuracy.
-    \"\"\"
+    """
     base_model = tf.keras.applications.MobileNetV2(
         input_shape=input_shape, include_top=False, weights='imagenet'
     )
@@ -51,18 +51,18 @@ def create_transfer_learning_model(input_shape=(224, 224, 3)):
     ], name="Snake_Mobilenet_v2")
     return model
 
-if __name__ == \"__main__\":
-    print(\"🛠️ Snake Classification Model Exporter\")
-    print(\"------------------------------------\")
+if __name__ == "__main__":
+    print("Snake Classification Model Exporter")
+    print("------------------------------------")
     
     # Example for baseline model
     model = create_deep_cnn_model()
-    print(\"✓ Custom Deep CNN Architecture initialized.\")
+    print("Custom Deep CNN Architecture initialized.")
     
-    print(\"\\n🚀 NEXT STEPS FOR FIXING PREDICTIONS:\")
-    print(\"1. Open your notebook in Google Colab.\")
-    print(\"2. Run: model.save('final_snake_model.keras')\")
-    print(\"3. Download the file and place it in 'backend/models/'\")
-    print(\"4. RESTART the backend server.\")
+    print("\nNEXT STEPS FOR FIXING PREDICTIONS:")
+    print("1. Open your notebook in Google Colab.")
+    print("2. Run: model.save('final_snake_model.keras')")
+    print("3. Download the file and place it in 'AI-Backend/models/'")
+    print("4. RESTART the backend server.")
     
-    print(\"\\n💡 TIP: If accuracy is still low, use the Transfer Learning architecture provided in this file.\")
+    print("\nTIP: If accuracy is still low, use the Transfer Learning architecture provided in this file.")

@@ -1,3 +1,44 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 🛡️ VenomGuard Pro: Advanced Biosafety AI
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
@@ -45,27 +86,27 @@ git clone https://github.com/your-username/VenomGuard-Pro.git
 cd VenomGuard-Pro
 ```
 
-### 2. Setup Backend
+### 2. Setup Project
 ```bash
-cd backend
+npm run install:all
+cd AI-Backend
 python -m venv venv
 source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 pip install -r requirements.txt
-python main.py
+cd ..
 ```
 
-### 3. Setup Frontend
+### 3. Run Everything
 ```bash
-cd frontend
-npm install
-npm run dev
+npm start
 ```
+This single command will simultaneously start the frontend, the web-backend, and the AI-Backend!
 
 ---
 
 ## 🧪 Development Workflow
 
-The project includes several research notebooks located in the `/Models` directory:
+The project includes several research notebooks located in the `AI-Backend/models` directory:
 - `Snake_Classification_with_CNN.ipynb`: Primary model architecture and training logic.
 - `Logistic_Model.ipynb` & `SVM_Model.ipynb`: Baseline comparison models.
 - `Clustering_UnSupervised.ipynb`: Feature space exploration.
@@ -78,15 +119,14 @@ To maintain a clean and professional repository, ensure the following structure 
 
 ```text
 VenomGuard-Pro/
-├── backend/            # Python Neural Core
-│   ├── models/         # Production Model Weights (.keras)
+├── AI-Backend/         # Python Neural Core
+│   ├── Data/           # (Git Ignored) Raw Training Data
+│   ├── models/         # Production Model Weights & R&D Jupyter Notebooks
 │   ├── main.py         # API Gateway
 │   └── train_cnn.py    # Training Pipeline
 ├── frontend/           # React Interface
 │   ├── src/            # UI Components & Logic
 │   └── public/         # Static Assets
-├── Models/             # R&D Jupyter Notebooks
-└── Data/               # (Git Ignored) Raw Training Data
 ```
 
 > [!IMPORTANT]

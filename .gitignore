@@ -24,7 +24,7 @@ __pycache__/
 
 # Models & Data
 # We ignore raw data usually, unless small
-Data/Raw data/
+AI-Backend/Data/Raw data/
 
 # Editor folders
 .vscode/
