@@ -3,11 +3,14 @@ import cors from 'cors';
 import multer from 'multer';
 import fs from 'fs';
 import axios from 'axios';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5002;
-const AI_BACKEND_URL = 'http://127.0.0.1:8000/predict';
-const GEMINI_API_KEY = 'AIzaSyDIZ0xefGt8hqTKIqmx0l0yummux1KyGhc';
+const AI_BACKEND_URL = process.env.AI_BACKEND_URL || 'http://127.0.0.1:8000/predict';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
 
 app.use(cors());
